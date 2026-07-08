@@ -8,17 +8,18 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
-defaults:
+
+    defaults:
       run:
         working-directory: ./parent_mod
-    steps:
 
+    steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
-        
+
       - name: Terraform Init
         run: terraform init
 
